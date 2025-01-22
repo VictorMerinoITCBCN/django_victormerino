@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="user-info">
+    <h1>Informació Professor</h1>
+    <span><b>Nom: </b>{{user.name}}</span><br>
+    <span><b>Cognoms: </b>{{user.last_name}} {{user.last_name_2}}</span><br>
+    <span><b>Email: </b>{{user.email}}</span><br>
+    <span><b>Tutor: </b>
+        {% if user.tutor %}
+            Si
+        {% else %}
+            No
+        {% endif %}
+    </span><br>
+    <span><b>Curs: </b>{{user.course}}</span>
+</div>
+
+<table>
+    <tr>
+        <th>Modules</th>
+    </tr>
+
+    {% for m in modules %}
+    <tr>
+        <td>{{m.name}}</td>
+    </tr>
+    {%endfor %}
+</table>
+{% endblock content %}

@@ -18,13 +18,17 @@ def teacher_index(request):
     return render(request, "user.html", context)
 
 def get_student(request, id):
+    student = Student.objects.get(id=id)
     context = {
-        "user": Student.objects.get(id=id)
+        "user": student,
+        "modules": student.modules.all()
     }
     return render(request, "student.html", context)
 
 def get_teacher(request, id):
+    teacher = Teacher.objects.get(id=id)
     context = {
-        "user": Teacher.objects.get(id=id)
+        "user": teacher,
+        "modules": teacher.modules.all()
     }
     return render(request, "teacher.html", context)
