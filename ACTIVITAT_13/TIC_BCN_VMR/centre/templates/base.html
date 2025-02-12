@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/centre.css' %}">
+    <title>TIC BCN</title>
+</head>
+<body>
+    <nav>
+        <a href="http://127.0.0.1:8000/students">Students</a>
+        <a href="http://127.0.0.1:8000/teachers">Teachers</a>
+    </nav>
+
+    <main>
+        {% block content %}
+
+        {% endblock content %}
+    </main>
+</body>
+</html>

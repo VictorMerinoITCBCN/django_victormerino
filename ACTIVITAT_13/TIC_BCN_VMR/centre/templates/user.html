@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Informació {{role}} ITICBCN</h1>
+<table>
+    <tr>
+        <th>NOM</th>
+        <th>COGNOMS</th>
+        <th>EMAIL</th>
+        <th>CURS</th>
+        <th>+ INFO</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.last_name}} {{user.last_name_2}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.course}}</td>
+        <td><a href="{{info_url}}{{user.id}}">+ INFO</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
